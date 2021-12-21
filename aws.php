@@ -14,7 +14,6 @@ $s3 = new S3Client([
 ]);
 
 try {
-    // Upload data.
 	$result = $s3->putObject([
 		'Bucket' 		=> $bucket,
 		'Key'    		=> $keyname,
@@ -24,7 +23,7 @@ try {
 
 	$imageUrl = $result['ObjectURL'];
 	if($imageUrl) {
-		echo "Image upload done. Here is the URL: " . $imageUrl;
+		echo "Image uploded " . $imageUrl;
 
 		$rekognition = new RekognitionClient([
 			'region' 	=> 'us-east-2',
